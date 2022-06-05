@@ -3,6 +3,7 @@ import { View, Image, Text, TextInput, TouchableHighlight } from 'react-native'
 import { texts, resources } from './constans.js'
 import { login } from './functions.js'
 import { AuthContext } from '../../Contexts/AuthContext.js'
+import { tw } from 'react-native-tailwindcss'
 
 const Login = () => {
   const [user, setUser] = useState('')
@@ -17,23 +18,27 @@ const Login = () => {
   const handleChangeCode = value => setCode(value)
 
   return (
-    <View>
-      <View>
-        <Image style={{ width: 140, height: 140 }} source={resources.logo} />
-        <Text>{texts.title}</Text>
-        <View>
-          <Text>{texts.labelUser}</Text>
+    <View style={[tw.hFull, tw.bgBlue200, tw.justifyCenter, tw.itemsCenter]}>
+      <View style={[tw.itemsCenter, tw.wFull, tw.p20]}>
+
+        <Image style={{ width: 120, height: 120 }} source={resources.logo} />
+        <Text style={[tw.mT4, tw.mB6, tw.textXl, tw.fontBold, tw.textCenter]}>{texts.title}</Text>
+
+        <View style={[tw.wFull]}>
+          <Text style={[tw.mB2]}>{texts.labelUser}</Text>
           <TextInput
+            style={[tw.bgWhite, tw.h12, tw.pX4, tw.mB4, tw.rounded]}
             placeholder={texts.placeholderUser}
             onChangeText={handleChangeUser}
             value={user}
-            keyboardType={'numeric'}
+            keyboardType={'text'}
             maxLength={15}
           />
         </View>
-        <View>
-          <Text>{texts.labelCode}</Text>
+        <View style={[tw.wFull]}>
+          <Text style={[tw.mB2]}>{texts.labelCode}</Text>
           <TextInput
+            style={[tw.bgWhite, tw.h12, tw.pX4, tw.mB4, tw.rounded]}
             placeholder={texts.placeholderCode}
             onChangeText={handleChangeCode}
             value={code}
@@ -41,7 +46,9 @@ const Login = () => {
             maxLength={4}
           />
         </View>
-        <TouchableHighlight onPress={handlePressLogin}>
+        <TouchableHighlight
+          style={[tw.bgBlue300, tw.h12, tw.justifyCenter, tw.pX8, tw.mT4]}
+          onPress={handlePressLogin}>
           <Text>{texts.button}</Text>
         </TouchableHighlight>
       </View>
