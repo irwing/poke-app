@@ -9,7 +9,7 @@ const texts = {
 
 // TODO: *** import to static file logo
 const resources = {
-  logo: require('../../../assets/pokebola.png')
+  logo: require('../../../assets/pokemon-logo.png')
 }
 
 export { texts, resources }
