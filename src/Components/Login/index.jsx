@@ -21,8 +21,8 @@ const Login = () => {
     <View style={[tw.hFull, tw.bgBlue200, tw.justifyCenter, tw.itemsCenter]}>
       <View style={[tw.itemsCenter, tw.wFull, tw.p20]}>
 
-        <Image style={{ width: 120, height: 120 }} source={resources.logo} />
-        <Text style={[tw.mT4, tw.mB6, tw.textXl, tw.fontBold, tw.textCenter]}>{texts.title}</Text>
+        <Image style={{ width: 220, height: 80 }} source={resources.logo} />
+        <Text style={[tw.mT6, tw.mB6, tw.textXl, tw.fontLight, tw.textCenter]}>{texts.title}</Text>
 
         <View style={[tw.wFull]}>
           <Text style={[tw.mB2]}>{texts.labelUser}</Text>
@@ -31,7 +31,6 @@ const Login = () => {
             placeholder={texts.placeholderUser}
             onChangeText={handleChangeUser}
             value={user}
-            keyboardType={'text'}
             maxLength={15}
           />
         </View>
